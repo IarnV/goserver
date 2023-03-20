@@ -1,0 +1,12 @@
+services:
+    sports:
+        build: sports/
+        ports: 
+          - "8080:8080"
+    firewall:
+        build: firewall/
+        ports: 
+          - "8081:8081"
+        depends_on:
+            - sports
+    

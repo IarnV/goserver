@@ -1,0 +1,15 @@
+rules:
+  - endpoint: "/athlete-info"
+
+    max_request_length_bytes: 200
+    max_response_length_bytes: 50
+
+    forbidden_response_codes: [201]
+
+  - endpoint: "/top-athletes-in-sport"
+
+    forbidden_request_re:
+      - '.*(\.\./){3,}.*'
+
+    forbidden_response_re:
+      - '.*admin.*'
